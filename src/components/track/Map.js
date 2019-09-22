@@ -10,12 +10,8 @@ const Map = () => {
 
   return (
     <figure className="track-map">
-      {track.circuit && (
-        <img
-          alt={track.circuit.name}
-          className="track-map-image"
-          src={track.circuit.diagram.href}
-        />
+      {track && (
+        <img alt={track.name} className="track-map-image" src={track.map} />
       )}
     </figure>
   );

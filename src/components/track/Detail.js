@@ -8,8 +8,8 @@ const Detail = () => {
   // load up the context
   const { event, track } = useContext(FormulaOneContext);
 
-  console.log('event', event);
-  console.log('track', track);
+  // console.log('event', event);
+  // console.log('track', track);
 
   return (
     <div className="track-detail">

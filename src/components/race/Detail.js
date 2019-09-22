@@ -9,40 +9,39 @@ import { DateTime } from '@components';
 
 const Detail = () => {
   // load up the context
-  const { event, track } = useContext(FormulaOneContext);
+  const { event, grandPrix, track } = useContext(FormulaOneContext);
 
   console.log('event', event);
   console.log('track', track);
+  console.log('gp', grandPrix);
 
   return (
     <div className="race-detail">
-      <h1 className="title is-3">{track.name}</h1>
+      <h1 className="title is-3">{grandPrix.name}</h1>
 
-      {track.circuit && (
-        <p className="circuit-name subtitle is-5">{track.circuit.name}</p>
-      )}
+      {track.name && <p className="circuit-name subtitle is-5">{track.name}</p>}
 
       <div className="race-info subtitle is-6">
         {track.date && track.endDate && (
           <p className="duration">
-            <DateTime format="MMMM d">{track.date}</DateTime> -{' '}
-            <DateTime format="MMMM d, yyyy">{track.endDate}</DateTime>
+            <DateTime format="MMMM d">{grandPrix.startDate}</DateTime> -{' '}
+            <DateTime format="MMMM d, yyyy">{grandPrix.endDate}</DateTime>
           </p>
         )}
 
-        {event.circuit && (
+        {track && (
           <>
             <div className="circuit-laps-turns">
-              <span className="laps">{event.circuit.laps} laps</span> &bull;{' '}
-              <span className="turns">{event.circuit.turns} turns</span>
+              <span className="laps">{track.laps} laps</span> &bull;{' '}
+              <span className="turns">{track.turns} turns</span>
             </div>
 
             <div className="circuit-distance-length">
-              <span className="length">{event.circuit.length}</span> /{' '}
-              <span className="distance">{event.circuit.distance}</span>
+              <span className="length">{track.length}</span> /{' '}
+              <span className="distance">{track.distance}</span>
             </div>
 
-            <p className="year">{event.circuit.established}</p>
+            <p className="year">{track.established}</p>
           </>
         )}
       </div>
