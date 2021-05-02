@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["airbnb", "airbnb/hooks", "plugin:jest/recommended"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "allowImportExportEverywhere": true,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/jsx-filename-extension":[0],
+    "import/no-extraneous-dependencies": [0],
+  }
+}
